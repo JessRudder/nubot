@@ -90,8 +90,3 @@ module.exports = (robot) ->
     match = msg.match[1].toLowerCase()
     if match != "best" && match != "worst"
       msg.send "\"#{match}\" has #{karma.get(match)} karma."
-
-  robot.on "attack", (attack) ->
-    subject = "hubot"
-    karma.increment subject
-    attack.message.send "@hubot #{karma.decrementResponse()} (Karma: #{karma.get(subject)})" 
